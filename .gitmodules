@@ -1,0 +1,3 @@
+[submodule "food-delivery"]
+	path = food-delivery
+	url = https://github.com/lewagon/food-delivery.git
