@@ -1,0 +1,9 @@
+.btn {
+  /* TODO */
+  border-radius: .5rem;
+  text-decoration: none;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-weight: 800;
+}

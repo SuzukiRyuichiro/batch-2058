@@ -3,6 +3,11 @@
 
 /* --- Components design --- */
 @import url("components/container.css");
+@import url("components/avatar.css");
+@import url("components/button.css");
+@import url("components/banner.css");
+@import url("components/flexbox.css");
+@import url("components/card.css");
 /* TODO: import new components */
 
 /* --- Fonts & colors --- */

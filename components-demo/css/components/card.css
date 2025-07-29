@@ -1,0 +1,39 @@
+.card-category {
+  color: white;
+  padding: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+}
+
+.card-product {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.card-product img {
+  height: 240px;
+  width: 240px;
+}
+
+.card-product .product-info {
+  padding-left: 3rem;
+}
+
+.card-trip {
+  width: 480px;
+  background-color: white;
+}
+
+.card-trip img {
+  width: 100%;
+}
+
+.card-trip .trip-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  align-items: flex-end;
+}
