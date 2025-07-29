@@ -1,0 +1,47 @@
+.house-card {
+  width: 500px;
+  /* height: 500px; */
+  background-color: aqua;
+}
+
+.card-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.house-info {
+  padding: 1rem 2rem;
+}
+
+.house-info h2 {
+  margin: 0;
+}
+
+.address {
+  display: flex;
+  gap: 20px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.price-breakdown > h3 {
+  color: cornflowerblue;
+  margin: 0;
+}
+
+.price-breakdown p {
+  color:darkgray;
+  margin: 0;
+}
+
+.percent-funded p {
+  background-color: rgb(100, 200, 90);
+  color: #fff;
+  padding: 1rem;
+  border-radius: .5rem;
+}

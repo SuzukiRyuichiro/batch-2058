@@ -3,6 +3,7 @@
 
 /* --- Components design --- */
 @import url("components/container.css");
+@import url("components/card.css");
 /* TODO: import new components */
 
 /* --- Fonts & colors --- */
