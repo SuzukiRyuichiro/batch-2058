@@ -16,9 +16,24 @@
     <div class="app-container">
       <h1 class="text-center my-4">🎁🎄 Christmas List 🎄🎁</h1>
 
+      <ol id="wish-list">
+      </ol>
+
       <div class="divider"></div>
 
       <h2>Add a new item</h2>
+
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" />
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" class="form-control" id="price" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 
       <div class="divider"></div>
 
