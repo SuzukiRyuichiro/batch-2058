@@ -23,7 +23,7 @@
 
       <h2>Add a new item</h2>
 
-      <form>
+      <form id="idea-form">
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
           <input type="text" class="form-control" id="name" />
@@ -37,9 +37,16 @@
 
       <div class="divider"></div>
 
-      <h3>Find ideas! 💡</h3>
+      <h3>Search items! 💡</h3>
+
+      <form id="search-form">
+        <select name="" id="category" class="form-control">
+        </select>
+        <button class="btn btn-primary">Search</button>
+      </form>
     </div>
 
     <script src="index.js"></script>
   </body>
 </html>
+
