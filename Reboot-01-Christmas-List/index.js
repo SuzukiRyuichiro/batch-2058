@@ -44,7 +44,6 @@ fetch(url)
   })
   .then((categories) => {
     // Iterate over each category
-    select.insertAdjacentHTML("afterbegin", "<option></option>");
     categories.forEach((category) => {
       // capitalize the category (google or day 1 js lecture and copy the function)
       const capitalizedCategory = capitalize(category);
@@ -54,3 +53,63 @@ fetch(url)
       select.insertAdjacentHTML("beforeend", optionElement);
     });
   });
+
+// Search and insert options
+
+// select the search form
+const searchForm = document.querySelector("#search-form");
+// add event listener to search form
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // select the unordered list
+  const searchResults = document.querySelector("#search-results");
+
+  // erase the pre-existing results
+  searchResults.innerHTML = "";
+  // *inside the event listener*
+  // get the value that the user selected
+  const selectedCategory = select.value;
+  // https://fakestoreapi.com/products/category/:category
+  // Fetch the items from the API
+  fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
+    // parse json from the response -> array of objects
+    .then((response) => response.json())
+    .then((gifts) => {
+      // iterate over the array
+      gifts.forEach((gift) => {
+        // on each iteration extract price and title from the object
+        const price = gift.price;
+        const name = gift.title;
+        // make an li with the title and price with a button
+        // const li = `<li>${name} -  $${price} <button class="btn btn-primary">Add</button></li>`;
+        const li = document.createElement("li");
+        // Change the text in the li to "Tight pants - $40"
+        li.innerText = `${name} -  $${price}`;
+        // Add "add" button into the li
+        // create the button element
+        const addButton = document.createElement("button");
+        // change the text to add
+        addButton.innerText = "Add";
+        // add class of btn btn-primary
+        addButton.classList.add("btn");
+        addButton.classList.add("btn-primary");
+
+        // Add an event listener to the add button which insert the item into the wish list
+        addButton.addEventListener("click", () => {
+          const wishList = document.querySelector("#wish-list");
+          // Create a <li> element with the name of the product and price (e.g. <li>Car - $10000</li>)
+          const newLi = `<li>${name} - $${price}</li>`;
+          // insert that li element into the wish list
+          wishList.insertAdjacentHTML("beforeend", newLi);
+          // remove the <li> in the search result
+          li.remove();
+        });
+
+        // put it in the li element
+        // <li>Macbook - $900 <button class="btn btn-primary">Add</button></li>
+        li.insertAdjacentElement("beforeend", addButton);
+        // insert them into the unordered list
+        searchResults.appendChild(li);
+      });
+    });
+});
