@@ -1,0 +1,14 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://image.pollinations.ai/prompt/wagon-movie-list);">
+  <div class="container">
+    <h1>Le Wagon Movie list!</h1>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.pollinations.ai/prompt/<%= list.name %>-movie))">
+        <%= list.name %>
+      </div>
+    <% end %>
+  </div>
+</div>
