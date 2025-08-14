@@ -3,4 +3,9 @@ class ListsController < ApplicationController
     # get all the lists from the DB
     @lists = List.all
   end
+
+  def show
+    # find the list we want to display
+    @list = List.find(params[:id])
+  end
 end
