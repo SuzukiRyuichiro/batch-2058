@@ -7,7 +7,12 @@
       <div class="card-product-infos">
         <h2><%= bookmark.movie.title %> - ⭐️ <%= bookmark.movie.rating %></h2>
         <p><%= bookmark.movie.overview %></p>
-        <p><i class="fa-solid fa-comment"></i><em><%= bookmark.comment %></em></p>
+        <div class="d-flex justify-content-between">
+          <p><i class="fa-solid fa-comment"></i><em><%= bookmark.comment %></em></p>
+          <%= link_to list_bookmark_path(@list, bookmark), { data: { turbo_method: :delete, turbo_confirm: 'ok?' }} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>

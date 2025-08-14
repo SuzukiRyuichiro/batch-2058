@@ -23,6 +23,18 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    # find the bookmark to delete
+    @bookmark = Bookmark.find(params[:id])
+    @list = List.find(params[:list_id])
+
+    if @bookmark.destroy
+      redirect_to list_path(@list)
+    else
+      render 'lists/show', status: :unprocessable_content
+    end
+  end
+
   private
 
   def bookmark_params
